@@ -23,7 +23,7 @@ public class user_logged_in extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_logged_in);
 
-        //user_info = (TextView)findViewById(R.id.user_info);
+//        user_info = (TextView)findViewById(R.id.user_info);
         user_password = (Button)findViewById(R.id.user_password);
 
         Intent intent = getIntent();
@@ -129,7 +129,7 @@ public class user_logged_in extends AppCompatActivity {
         }
 
         info = info + "Final Amount : \t \t \t" + final_amount + "\n\n";
-        user_info.setText(info);
+//        user_info.setText(info);
     }
 
     public String convert(int a, String day,String reading){

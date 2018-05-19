@@ -19,9 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 
 public class add_user_data extends AppCompatActivity {
@@ -35,10 +33,6 @@ public class add_user_data extends AppCompatActivity {
     private ArrayAdapter<CharSequence> dates;
     private ArrayAdapter<CharSequence> months;
     private ArrayAdapter<CharSequence> years;
-
-    Date d = Calendar.getInstance().getTime();
-    SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
-    String formattedDate = df.format(d);
 
     FirebaseDatabase fbDatabase;
     DatabaseReference fbDatabaseReference;
@@ -188,7 +182,8 @@ public class add_user_data extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        //super.onBackPressed();
+//        startActivity(new Intent(this,admin_logged_in.class));
+//        //super.onBackPressed();
         finish();
     }
 

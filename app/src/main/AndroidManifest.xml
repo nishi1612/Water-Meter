@@ -2,13 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.application.watermeter">
 
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icon1"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -27,7 +23,8 @@
         <activity android:name=".user_signup" />
         <activity android:name=".add_user_data" />
         <activity android:name=".user_logged_in" />
-        <activity android:name=".user_change_password"></activity>
+        <activity android:name=".user_change_password" />
+        <activity android:name=".EnterSocietyDetails"></activity>
     </application>
 
 </manifest>

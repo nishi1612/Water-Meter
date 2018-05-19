@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context="com.example.application.watermeter.admin_login">
 
+    <!--<Button-->
+        <!--android:id="@+id/user_login_submit"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignEnd="@+id/add_user_data"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignRight="@+id/add_user_data"-->
+        <!--android:layout_marginBottom="37dp"-->
+        <!--android:text="Submit" />-->
+
     <EditText
         android:id="@+id/admin_login_username"
         android:layout_width="300dp"
