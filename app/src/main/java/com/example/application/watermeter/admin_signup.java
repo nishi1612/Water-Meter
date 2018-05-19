@@ -79,10 +79,10 @@ public class admin_signup extends AppCompatActivity {
 
                 final String password = admin_signup_password.getText().toString().trim();
                 final String society = admin_signup_society.getText().toString().trim();
-                String username = 
                 String password_2 = admin_signup_password_2.getText().toString().trim();
+                final String username = "Hello";
 
-                if(TextUtils.isEmpty(admin_signup_username)) {
+                if(TextUtils.isEmpty(username)) {
                     Toast.makeText(admin_signup.this,"Please enter your username",Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -110,7 +110,7 @@ public class admin_signup extends AppCompatActivity {
                 Query query = mDatabase
                         .child("Admin")
                         .orderByChild("username")
-                        .equalTo(admin_signup_username);
+                        .equalTo(username);
 
                 query.addListenerForSingleValueEvent(new ValueEventListener(){
                     @Override
@@ -125,7 +125,7 @@ public class admin_signup extends AppCompatActivity {
 
                             String y = admin_signup_username + "_" + password;
 
-                            userData.put("Username", admin_signup_username);
+                            userData.put("Username", username);
                             userData.put("Password", password);
                             userData.put("Society", society);
                             userData.put("username_password",y);
