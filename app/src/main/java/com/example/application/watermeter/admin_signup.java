@@ -73,8 +73,7 @@ public class admin_signup extends AppCompatActivity {
         admin_signup_pincode = (EditText) findViewById(R.id.admin_signup_pincode);
 
         pricing_method = (RadioGroup) findViewById(R.id.pricing_method);
-//        cost = (EditText)findViewById(R.id.cost);
-//        discount = (EditText)findViewById(R.id.discount);
+
 
         usernames = (TextView)findViewById(R.id.username);
 
@@ -102,9 +101,7 @@ public class admin_signup extends AppCompatActivity {
                 String t = "";
                 t = "Username : " + t + String.valueOf(size[0]);
                 usernames.setText(t);
-                //Toast.makeText(getApplicationContext(), t, Toast.LENGTH_LONG).show();
                 username[0] = String.valueOf(size[0]);
-                //usernames.setText(username[0]);
             }
 
             @Override
@@ -126,6 +123,7 @@ public class admin_signup extends AppCompatActivity {
                 final String area = admin_signup_area.getText().toString().trim();
                 final String pincode = admin_signup_pincode.getText().toString().trim();
                 final String password_2 = admin_signup_password_2.getText().toString().trim();
+                final String pricing = ((RadioButton) findViewById(pricing_method.getCheckedRadioButtonId())).getText().toString().trim();
 
 //                final String costs = cost.getText().toString().trim();
 //                final String discounts = discount.getText().toString().trim();
@@ -177,8 +175,8 @@ public class admin_signup extends AppCompatActivity {
 //                    return;
 //                }
 
-                AdapterView method = null;
-                final String method1 = method.getSelectedItem().toString();
+//                AdapterView method = null;
+//                final String method1 = method.getSelectedItem().toString();
 
                 int selectMethod = pricing_method.getCheckedRadioButtonId();
                 radioButton = (RadioButton) findViewById(selectMethod);
@@ -220,6 +218,7 @@ public class admin_signup extends AppCompatActivity {
                             userData.put("city",city);
                             userData.put("area",area);
                             userData.put("pincode",pincode);
+                            userData.put("Pricing_method",pricing);
 //                            userData.put("Pricing Method",);
 //                            if(method1.equals("Method 1")){
 //                                userData.put("Method",String.valueOf(1));
@@ -244,7 +243,7 @@ public class admin_signup extends AppCompatActivity {
                             i.putExtra("username_password",y);
                             i.putExtra("cost","0");
                             i.putExtra("discount","0");
-                            i.putExtra("method",method1);
+//                            i.putExtra("method",method1);
                             startActivity(i);
                             finish();
 

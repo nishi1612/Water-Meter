@@ -159,7 +159,7 @@
         android:hint="Enter initial reading"
         android:inputType="textPersonName" />
 
-    <EditText
+    <TextView
         android:id="@+id/user_date"
         android:layout_width="300dp"
         android:layout_height="50dp"

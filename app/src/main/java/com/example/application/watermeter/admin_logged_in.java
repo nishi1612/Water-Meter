@@ -26,8 +26,8 @@ public class admin_logged_in extends AppCompatActivity {
         String society = intent.getStringExtra("society");
         String cost = intent.getStringExtra("cost");
 
-        admin_username = (TextView) findViewById(R.id.admin_username);
-        admin_username.setText("Hi " + username + " , \n Welcome to your dashboard\n");
+//        admin_username = (TextView) findViewById(R.id.admin_username);
+//        admin_username.setText("Welcome to your dashboard\n");
 
 //        change.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -39,8 +39,8 @@ public class admin_logged_in extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        //super.onBackPressed();
-        finish();
+        super.onBackPressed();
+        //finish();
     }
 
     public void choosen_add_user(View view) {

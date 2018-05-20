@@ -27,21 +27,22 @@ public class user_signup extends AppCompatActivity {
 
     private EditText user_flat;
     private EditText user_initial_reading;
-    //private EditText user_cost;
     private EditText user_signup_mobile_number;
     private Button user_signed_up;
+    private TextView user_date;
+
 //    private Spinner user_signup_date;
 //    private Spinner user_signup_month;
 //    private Spinner user_signup_year;
 //    private ArrayAdapter<CharSequence> dates;
 //    private ArrayAdapter<CharSequence> months;
 //    private ArrayAdapter<CharSequence> years;
-    private TextView txtView;
 
     private DatabaseReference mDatabase;
 
     @Override
     public void onBackPressed() {
+        //super.onBackPressed();
         finish();
     }
 
@@ -53,17 +54,17 @@ public class user_signup extends AppCompatActivity {
         Calendar c = Calendar.getInstance();
         System.out.println("Current time => "+c.getTime());
 
-//        txtView = (TextView) findViewById(R.id.date);
+        user_date = (TextView) findViewById(R.id.user_date);
+
 
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         final String formattedDate = df.format(c.getTime());
 
-        txtView.setText(formattedDate);
+        user_date.setText(formattedDate);
 
         user_flat = (EditText)findViewById(R.id.user_flat);
         user_initial_reading = (EditText)findViewById(R.id.user_initial_reading);
         user_signed_up = (Button)findViewById(R.id.user_signed_up);
-        //user_cost = (EditText)findViewById(R.id.user_cost);
         user_signup_mobile_number = (EditText)findViewById(R.id.user_signup_mobile_number);
 
 //        user_signup_date = (Spinner)findViewById(R.id.user_signup_date);

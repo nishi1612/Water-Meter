@@ -47,12 +47,12 @@ public class EnterSocietyDetails extends AppCompatActivity {
         final String y = intent.getStringExtra("username_password");
         //final String discounts = intent.getStringExtra("discount");
         final String method = intent.getStringExtra("method");
-
-        if(method.equals("Method 1")){
-            discount.setText("0");
-            discount.setFocusable(false);
-            discount.setEnabled(false);
-        }
+//
+//        if(method.equals("Method 1")){
+//            discount.setText("0");
+//            discount.setFocusable(false);
+//            discount.setEnabled(false);
+//        }
 
         done.setOnClickListener(new View.OnClickListener() {
             @Override
