@@ -94,7 +94,7 @@
 
     <EditText
         android:id="@+id/add_user_data_username"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="100dp"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_alignLeft="@+id/add_user_data_reading"
@@ -107,7 +107,7 @@
 
     <EditText
         android:id="@+id/add_user_data_reading"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="2dp"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_below="@+id/add_user_data_username"
@@ -131,56 +131,79 @@
         android:padding="5dp"
         android:text="Add" />
 
-    <Spinner
-        android:id="@+id/add_user_data_date"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/add_user_data_reading"
-        android:layout_alignRight="@+id/add_user_data_reading"
-        android:layout_below="@+id/add_user_data_reading"
-        android:layout_marginTop="36dp" />
+    <!--<Spinner-->
+        <!--android:id="@+id/add_user_data_date"-->
+        <!--android:layout_width="150dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignEnd="@+id/add_user_data_reading"-->
+        <!--android:layout_alignRight="@+id/add_user_data_reading"-->
+        <!--android:layout_below="@+id/add_user_data_reading"-->
+        <!--android:layout_marginTop="36dp" />-->
 
-    <Spinner
-        android:id="@+id/add_user_data_month"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/add_user_data_date"
-        android:layout_alignStart="@+id/add_user_data_date"
-        android:layout_below="@+id/add_user_data_date" />
+    <!--<Spinner-->
+        <!--android:id="@+id/add_user_data_month"-->
+        <!--android:layout_width="150dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignEnd="@+id/add_user_data_username"-->
+        <!--android:layout_below="@+id/add_user_data_date"-->
+        <!--android:layout_alignRight="@+id/add_user_data_username" />-->
 
-    <Spinner
-        android:id="@+id/add_user_data_year"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/add_user_data_month"
-        android:layout_alignStart="@+id/add_user_data_month"
-        android:layout_below="@+id/add_user_data_month" />
+    <!--<Spinner-->
+        <!--android:id="@+id/add_user_data_year"-->
+        <!--android:layout_width="150dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignLeft="@+id/add_user_data_month"-->
+        <!--android:layout_alignStart="@+id/add_user_data_month"-->
+        <!--android:layout_below="@+id/add_user_data_month" />-->
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/add_user_data_month"
-        android:layout_alignLeft="@+id/add_user_data_reading"
-        android:layout_alignStart="@+id/add_user_data_reading"
-        android:text="Select date" />
+    <!--<TextView-->
+        <!--android:id="@+id/textView4"-->
+        <!--android:layout_width="100dp"-->
+        <!--android:layout_height="25dp"-->
+        <!--android:layout_above="@+id/add_user_data_month"-->
+        <!--android:layout_alignLeft="@+id/add_user_data_reading"-->
+        <!--android:layout_alignStart="@+id/add_user_data_reading"-->
+        <!--android:background="@drawable/up"-->
+        <!--android:textColor="@android:color/white"-->
+        <!--android:padding="5dp"-->
+        <!--android:text="Select date"-->
+        <!--android:ems="10"/>-->
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/add_user_data_year"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_alignStart="@+id/textView4"
-        android:text="Select month" />
+    <!--<TextView-->
+        <!--android:id="@+id/textView5"-->
+        <!--android:layout_width="100dp"-->
+        <!--android:layout_height="25dp"-->
+        <!--android:layout_above="@+id/add_user_data_year"-->
+        <!--android:layout_alignLeft="@+id/textView4"-->
+        <!--android:layout_alignStart="@+id/textView4"-->
+        <!--android:background="#abcdef"-->
+        <!--android:textColor="@android:color/white"-->
+        <!--android:padding="5dp"-->
+        <!--android:text="Select month"-->
+        <!--android:ems="10"/>-->
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/add_user_data_year"
-        android:layout_alignLeft="@+id/textView5"
-        android:layout_alignStart="@+id/textView5"
-        android:text="Select year" />
+    <!--<TextView-->
+        <!--android:id="@+id/textView6"-->
+        <!--android:layout_width="100dp"-->
+        <!--android:layout_height="25dp"-->
+        <!--android:layout_alignStart="@+id/add_user_data_username"-->
+        <!--android:layout_below="@+id/add_user_data_month"-->
+        <!--android:background="@drawable/down"-->
+        <!--android:ems="10"-->
+        <!--android:paddingLeft="5dp"-->
+        <!--android:text="Select year"-->
+        <!--android:textColor="@android:color/white" />-->
 
+    <EditText
+        android:id="@+id/sdate"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:hint="Select Date"
+        android:layout_centerHorizontal="true"
+        android:focusable="false"
+        android:background="@drawable/button_round"
+        android:textColorHint="@android:color/white"
+        android:textColor="@android:color/white"
+        android:padding="5dp"
+        android:layout_marginTop="300dp" />
 </RelativeLayout>

@@ -39,8 +39,9 @@ public class admin_logged_in extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-        //finish();
+        //super.activity();
+        //super.onBackPressed();
+        finish();
     }
 
     public void choosen_add_user(View view) {

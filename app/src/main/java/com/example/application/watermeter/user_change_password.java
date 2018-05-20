@@ -93,7 +93,7 @@ public class user_change_password extends AppCompatActivity {
                         HashMap<String, Object> map = (HashMap<String, Object>) mObject;
 
                         String flat = map.get("Flat").toString();
-                        String cost = map.get("Cost").toString();
+//                        String cost = map.get("Cost").toString();
                         String final_amount = map.get("Final Amount").toString();
                         String society = map.get("Society").toString();
                         String password = map.get("Password").toString();
@@ -167,7 +167,7 @@ public class user_change_password extends AppCompatActivity {
                         userData.put("Password",newpassword);
 
                         userData.put("Society",society);
-                        userData.put("Cost",cost);
+//                        userData.put("Cost",cost);
                         userData.put("Final Amount",final_amount);
 
                         fbDatabaseReference.child("Admin").child(admin).push().updateChildren(userData);

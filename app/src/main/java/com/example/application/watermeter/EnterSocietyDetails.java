@@ -43,7 +43,11 @@ public class EnterSocietyDetails extends AppCompatActivity {
         final String username = intent.getStringExtra("username");
         final String password = intent.getStringExtra("password");
         final String society = intent.getStringExtra("society");
-        //final String costs = intent.getStringExtra("cost");
+        final String city = intent.getStringExtra("city");
+        final String area = intent.getStringExtra("area");
+        final String pincode = intent.getStringExtra("pincode");
+        final String pricing = intent.getStringExtra("pricing");
+        final String costs = intent.getStringExtra("cost");
         final String y = intent.getStringExtra("username_password");
         //final String discounts = intent.getStringExtra("discount");
         final String method = intent.getStringExtra("method");
@@ -89,14 +93,19 @@ public class EnterSocietyDetails extends AppCompatActivity {
                                 HashMap<String, Object> userData = new HashMap<String, Object>();
 
                                 userData.put("Username", username);
-                                userData.put("Password", password);
                                 userData.put("Society", society);
+                                userData.put("city",city);
+                                userData.put("Area",area);
+                                userData.put("Pincode",pincode);
+                                userData.put("Pricing_method",pricing);
+                                userData.put("Password", password);
                                 userData.put("username_password", y);
-                                if(method.equals("Method 1")){
-                                    userData.put("Method",String.valueOf(1));
-                                }else{
-                                    userData.put("Method",String.valueOf(2));
-                                }
+
+//                                if(method.equals("Method 1")){
+//                                    userData.put("Method",String.valueOf(1));
+//                                }else{
+//                                    userData.put("Method",String.valueOf(2));
+//                                }
                                 userData.put("Cost",costs);
                                 userData.put("Discount",discounts);
 

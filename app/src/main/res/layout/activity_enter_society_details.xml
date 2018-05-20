@@ -8,36 +8,40 @@
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="74dp"
-        android:layout_marginStart="74dp"
-        android:layout_marginTop="100dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
         android:ems="10"
         android:hint="Enter cost per unit"
+        android:background="@drawable/up"
+        android:textColorHint="@android:color/white"
+        android:padding="5dp"
         android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/editText"
-        android:layout_marginTop="143dp"
+        android:layout_marginTop="2dp"
+        android:layout_centerHorizontal="true"
         android:ems="10"
-        android:hint="Enter amount till discount is to be given"
-        android:inputType="textPersonName" />
+        android:hint="Enter amount of discount"
+        android:background="@drawable/down"
+        android:textColorHint="@android:color/white"
+        android:padding="5dp"
+        android:inputType="number" />
 
     <Button
         android:id="@+id/done"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editText2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="90dp"
-        android:text="done" />
+        android:text="DONE"
+        android:background="@drawable/button_round"
+        android:textColor="@android:color/white"
+        android:inputType="number"/>
 </RelativeLayout>

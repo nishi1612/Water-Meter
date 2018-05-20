@@ -91,7 +91,7 @@ public class user_login extends AppCompatActivity {
 
 
                         String flat = map.get("Flat").toString();
-                        String cost = map.get("Cost").toString();
+//                        String cost = map.get("Cost").toString();
                         String final_amount = map.get("Final Amount").toString();
                         String society = map.get("Society").toString();
 
@@ -129,7 +129,7 @@ public class user_login extends AppCompatActivity {
                         i.putExtra("society",society);
                         i.putExtra("username_password",y);
                         i.putExtra("flat", flat);
-                        i.putExtra("cost", cost);
+//                        i.putExtra("cost", cost);
                         i.putExtra("final_amount",final_amount);
                         i.putExtra("reading0",reading0);
                         i.putExtra("reading1",reading1);

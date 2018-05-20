@@ -243,6 +243,10 @@ public class admin_signup extends AppCompatActivity {
                             i.putExtra("username_password",y);
                             i.putExtra("cost","0");
                             i.putExtra("discount","0");
+                            i.putExtra("area",area);
+                            i.putExtra("city",city);
+                            i.putExtra("pincode",pincode);
+                            i.putExtra("pricing_method",pricing);
 //                            i.putExtra("method",method1);
                             startActivity(i);
                             finish();

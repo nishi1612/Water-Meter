@@ -1,5 +1,6 @@
 package com.example.application.watermeter;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -19,8 +21,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Locale;
 
 public class add_user_data extends AppCompatActivity {
 
@@ -34,6 +38,7 @@ public class add_user_data extends AppCompatActivity {
     private ArrayAdapter<CharSequence> months;
     private ArrayAdapter<CharSequence> years;
 
+    private EditText selectDate;
     FirebaseDatabase fbDatabase;
     DatabaseReference fbDatabaseReference;
 
@@ -43,28 +48,65 @@ public class add_user_data extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_user_data);
 
-        add_user_data_username =(EditText)findViewById(R.id.add_user_data_username);
-        add_user_data_reading = (EditText)findViewById(R.id.add_user_data_reading);
+//        add_user_data_username =(EditText)findViewById(R.id.add_user_data_username);
+//        add_user_data_reading = (EditText)findViewById(R.id.add_user_data_reading);
         add_data = (Button)findViewById(R.id.add_data);
-
-        add_user_data_date = (Spinner)findViewById(R.id.add_user_data_date);
-        dates = ArrayAdapter.createFromResource(this,R.array.Dates,android.R.layout.simple_spinner_item);
-        dates.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        add_user_data_date.setAdapter(dates);
-
-        add_user_data_month = (Spinner)findViewById(R.id.add_user_data_month);
-        months = ArrayAdapter.createFromResource(this,R.array.Months,android.R.layout.simple_spinner_item);
-        months.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        add_user_data_month.setAdapter(months);
-
-        add_user_data_year = (Spinner)findViewById(R.id.add_user_data_year);
-        years = ArrayAdapter.createFromResource(this,R.array.Years,android.R.layout.simple_spinner_item);
-        years.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        add_user_data_year.setAdapter(years);
+//
+//        add_user_data_date = (Spinner)findViewById(R.id.add_user_data_date);
+//        dates = ArrayAdapter.createFromResource(this,R.array.Dates,android.R.layout.simple_spinner_item);
+//        dates.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        add_user_data_date.setAdapter(dates);
+//
+//        add_user_data_month = (Spinner)findViewById(R.id.add_user_data_month);
+//        months = ArrayAdapter.createFromResource(this,R.array.Months,android.R.layout.simple_spinner_item);
+//        months.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        add_user_data_month.setAdapter(months);
+//
+//        add_user_data_year = (Spinner)findViewById(R.id.add_user_data_year);
+//        years = ArrayAdapter.createFromResource(this,R.array.Years,android.R.layout.simple_spinner_item);
+//        years.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        add_user_data_year.setAdapter(years);
 
 
         fbDatabase = FirebaseDatabase.getInstance();
         fbDatabaseReference = fbDatabase.getReference();
+
+        selectDate = (EditText) findViewById(R.id.sdate);
+
+        final Calendar myCalendar = Calendar.getInstance();
+
+
+
+        final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+
+            private void updateLabel() {
+                String myFormat = "MM/dd/yy"; //In which you need put here
+                SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+
+                selectDate.setText(sdf.format(myCalendar.getTime()));
+            }
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                // TODO Auto-generated method stub
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH, monthOfYear);
+                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                updateLabel();
+                }
+
+        };
+
+        selectDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // TODO Auto-generated method stub
+                new DatePickerDialog(add_user_data.this, date, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
 
         add_data.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -75,7 +117,8 @@ public class add_user_data extends AppCompatActivity {
 
                 String month = add_user_data_month.getSelectedItem().toString();
 
-                String date = add_user_data_date.getSelectedItem().toString();
+                String date = selectDate.getText().toString().trim();
+//                String date = add_user_data_date.getSelectedItem().toString();
 
 
                 if(date.equals("1")){
