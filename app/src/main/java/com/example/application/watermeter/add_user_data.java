@@ -10,7 +10,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.NumberPicker;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.Task;
@@ -21,8 +23,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 
@@ -38,9 +42,19 @@ public class add_user_data extends AppCompatActivity {
     private ArrayAdapter<CharSequence> months;
     private ArrayAdapter<CharSequence> years;
 
-    private EditText selectDate;
+    private NumberPicker numberPicker1;
+    private NumberPicker numberPicker2;
+    private NumberPicker numberPicker3;
+    private NumberPicker numberPicker4;
+    private NumberPicker numberPicker5;
+    private NumberPicker numberPicker6;
+    private NumberPicker numberPicker7;
+    private NumberPicker numberPicker8;
+    private NumberPicker numberPicker9;
+    private TextView selectDate;
     FirebaseDatabase fbDatabase;
     DatabaseReference fbDatabaseReference;
+
 
 
     @Override
@@ -71,16 +85,73 @@ public class add_user_data extends AppCompatActivity {
         fbDatabase = FirebaseDatabase.getInstance();
         fbDatabaseReference = fbDatabase.getReference();
 
-        selectDate = (EditText) findViewById(R.id.sdate);
+        selectDate = (TextView) findViewById(R.id.sdate);
+        numberPicker1 = (NumberPicker) findViewById(R.id.meter1);
+        numberPicker2 = (NumberPicker) findViewById(R.id.meter2);
+        numberPicker3 = (NumberPicker) findViewById(R.id.meter3);
+        numberPicker4 = (NumberPicker) findViewById(R.id.meter4);
+        numberPicker5 = (NumberPicker) findViewById(R.id.meter5);
+        numberPicker6 = (NumberPicker) findViewById(R.id.meter6);
+        numberPicker7 = (NumberPicker) findViewById(R.id.meter7);
+        numberPicker8 = (NumberPicker) findViewById(R.id.meter8);
+        numberPicker9 = (NumberPicker) findViewById(R.id.meter9);
+
+        numberPicker1.setMinValue(0);
+        numberPicker1.setMaxValue(9);
+
+        numberPicker2.setMinValue(0);
+        numberPicker2.setMaxValue(9);
+
+        numberPicker3.setMinValue(0);
+        numberPicker3.setMaxValue(9);
+
+        numberPicker4.setMinValue(0);
+        numberPicker4.setMaxValue(9);
+
+        numberPicker5.setMinValue(0);
+        numberPicker5.setMaxValue(9);
+
+        numberPicker6.setMinValue(0);
+        numberPicker6.setMaxValue(9);
+
+        numberPicker7.setMinValue(0);
+        numberPicker7.setMaxValue(9);
+
+        numberPicker8.setMinValue(0);
+        numberPicker8.setMaxValue(9);
+
+        numberPicker9.setMinValue(0);
+        numberPicker9.setMaxValue(9);
+
+        numberPicker1.setWrapSelectorWheel(true);
+        numberPicker2.setWrapSelectorWheel(true);
+        numberPicker3.setWrapSelectorWheel(true);
+        numberPicker4.setWrapSelectorWheel(true);
+        numberPicker5.setWrapSelectorWheel(true);
+        numberPicker6.setWrapSelectorWheel(true);
+        numberPicker7.setWrapSelectorWheel(true);
+        numberPicker8.setWrapSelectorWheel(true);
+        numberPicker9.setWrapSelectorWheel(true);
+
+
+
+//        numberPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+//            @Override
+//            public void onValueChange(NumberPicker numberPicker, int i, int i1) {
+//
+//            }
+//        });
 
         final Calendar myCalendar = Calendar.getInstance();
 
+        String currentDateTimeString = DateFormat.getDateInstance(DateFormat.LONG).format(new Date());
 
+        selectDate.setText(currentDateTimeString);
 
         final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
 
             private void updateLabel() {
-                String myFormat = "MM/dd/yy"; //In which you need put here
+                String myFormat = "MMMM dd , yyyy"; //In which you need put here
                 SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
                 selectDate.setText(sdf.format(myCalendar.getTime()));
@@ -96,6 +167,9 @@ public class add_user_data extends AppCompatActivity {
                 }
 
         };
+
+
+
 
         selectDate.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -41,7 +41,7 @@ public class admin_signup extends AppCompatActivity {
     private EditText admin_signup_password_2;
     private Button admin_signup_submit;
 
-    private RadioGroup pricing_method;
+//    private RadioGroup pricing_method;
     private RadioButton radioButton;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
@@ -72,7 +72,7 @@ public class admin_signup extends AppCompatActivity {
         admin_signup_city = (EditText) findViewById(R.id.admin_signup_city);
         admin_signup_pincode = (EditText) findViewById(R.id.admin_signup_pincode);
 
-        pricing_method = (RadioGroup) findViewById(R.id.pricing_method);
+//        pricing_method = (RadioGroup) findViewById(R.id.pricing_method);
 
 
         usernames = (TextView)findViewById(R.id.username);
@@ -123,7 +123,7 @@ public class admin_signup extends AppCompatActivity {
                 final String area = admin_signup_area.getText().toString().trim();
                 final String pincode = admin_signup_pincode.getText().toString().trim();
                 final String password_2 = admin_signup_password_2.getText().toString().trim();
-                final String pricing = ((RadioButton) findViewById(pricing_method.getCheckedRadioButtonId())).getText().toString().trim();
+//                final String pricing = ((RadioButton) findViewById(pricing_method.getCheckedRadioButtonId())).getText().toString().trim();
 
 //                final String costs = cost.getText().toString().trim();
 //                final String discounts = discount.getText().toString().trim();
@@ -178,8 +178,8 @@ public class admin_signup extends AppCompatActivity {
 //                AdapterView method = null;
 //                final String method1 = method.getSelectedItem().toString();
 
-                int selectMethod = pricing_method.getCheckedRadioButtonId();
-                radioButton = (RadioButton) findViewById(selectMethod);
+//                int selectMethod = pricing_method.getCheckedRadioButtonId();
+//                radioButton = (RadioButton) findViewById(selectMethod);
 
 //                if(method1.equals("Method 2")){
 //                    if(TextUtils.isEmpty(discounts)){
@@ -218,7 +218,7 @@ public class admin_signup extends AppCompatActivity {
                             userData.put("city",city);
                             userData.put("area",area);
                             userData.put("pincode",pincode);
-                            userData.put("Pricing_method",pricing);
+//                            userData.put("Pricing_method",pricing);
 //                            userData.put("Pricing Method",);
 //                            if(method1.equals("Method 1")){
 //                                userData.put("Method",String.valueOf(1));
@@ -246,7 +246,7 @@ public class admin_signup extends AppCompatActivity {
                             i.putExtra("area",area);
                             i.putExtra("city",city);
                             i.putExtra("pincode",pincode);
-                            i.putExtra("pricing_method",pricing);
+//                            i.putExtra("pricing_method",pricing);
 //                            i.putExtra("method",method1);
                             startActivity(i);
                             finish();
@@ -255,7 +255,6 @@ public class admin_signup extends AppCompatActivity {
 //                            startActivity(new Intent(getApplicationContext(), admin_login.class));
 //                            finish();
 //
-//                            Log.d("hello1", "how1");
 
 
                         }

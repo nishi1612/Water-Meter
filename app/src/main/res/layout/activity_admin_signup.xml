@@ -85,7 +85,7 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/button_round"
         android:textColor="@android:color/white"
-        android:layout_marginTop="510dp"
+        android:layout_marginTop="500dp"
         android:text="Next" />
 
     <EditText
@@ -107,7 +107,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="100dp"
         android:layout_centerHorizontal="true"
-        android:background="#abcdef"
+        android:background="#569adf"
         android:ems="10"
         android:hint="Enter your Area"
         android:textColorHint="@android:color/white"
@@ -120,7 +120,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="150dp"
         android:layout_centerHorizontal="true"
-        android:background="#abcdef"
+        android:background="#569adf"
         android:ems="10"
         android:hint="Enter your City"
         android:textColorHint="@android:color/white"
@@ -133,7 +133,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="200dp"
         android:layout_centerHorizontal="true"
-        android:background="#abcdef"
+        android:background="#569adf"
         android:ems="10"
         android:hint="Enter your Pincode"
         android:textColorHint="@android:color/white"
@@ -147,7 +147,7 @@
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="250dp"
-        android:background="#abcdef"
+        android:background="#569adf"
         android:ems="10"
         android:hint="Username"
         android:textSize="15dp"
@@ -160,7 +160,7 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="300dp"
-        android:background="#abcdef"
+        android:background="#569adf"
         android:ems="10"
         android:hint="Enter your Password"
         android:layout_centerHorizontal="true"
@@ -172,7 +172,7 @@
         android:id="@+id/admin_signup_password_2"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:background="#abcdef"
+        android:background="@drawable/down"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="350dp"
         android:ems="10"
@@ -181,39 +181,39 @@
         android:padding="5dp"
         android:inputType="textPassword" />
 
-    <TextView
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:background="#abcdef"
-        android:layout_marginTop="400dp"
-        android:layout_centerHorizontal="true"
-        android:textColor="@android:color/black"
-        android:textSize="20dp"
-        android:padding="5dp"
-        android:text="Pricing Method"
-        />
+    <!--<TextView-->
+        <!--android:layout_width="300dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="#abcdef"-->
+        <!--android:layout_marginTop="400dp"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:textColor="@android:color/black"-->
+        <!--android:textSize="20dp"-->
+        <!--android:padding="5dp"-->
+        <!--android:text="Pricing Method"-->
+        <!--/>-->
 
-    <RadioGroup
-        android:id="@+id/pricing_method"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/down"
-        android:layout_marginTop="430dp"
-        android:padding="5dp"
-        android:layout_centerHorizontal="true"
-        >
+    <!--<RadioGroup-->
+        <!--android:id="@+id/pricing_method"-->
+        <!--android:layout_width="300dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@drawable/down"-->
+        <!--android:layout_marginTop="430dp"-->
+        <!--android:padding="5dp"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--&gt;-->
 
-        <RadioButton
-            android:id="@+id/fixed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fixed Costing"/>
+        <!--<RadioButton-->
+            <!--android:id="@+id/fixed"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Fixed Costing"/>-->
 
-        <RadioButton
-            android:id="@+id/variable"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fixed + Variable Costing"/>
-    </RadioGroup>
+        <!--<RadioButton-->
+            <!--android:id="@+id/variable"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Fixed + Variable Costing"/>-->
+    <!--</RadioGroup>-->
 
 </RelativeLayout>

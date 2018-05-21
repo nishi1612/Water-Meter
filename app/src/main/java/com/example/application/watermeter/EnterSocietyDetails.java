@@ -46,7 +46,7 @@ public class EnterSocietyDetails extends AppCompatActivity {
         final String city = intent.getStringExtra("city");
         final String area = intent.getStringExtra("area");
         final String pincode = intent.getStringExtra("pincode");
-        final String pricing = intent.getStringExtra("pricing");
+//        final String pricing = intent.getStringExtra("pricing");
         final String costs = intent.getStringExtra("cost");
         final String y = intent.getStringExtra("username_password");
         //final String discounts = intent.getStringExtra("discount");
@@ -97,7 +97,7 @@ public class EnterSocietyDetails extends AppCompatActivity {
                                 userData.put("city",city);
                                 userData.put("Area",area);
                                 userData.put("Pincode",pincode);
-                                userData.put("Pricing_method",pricing);
+//                                userData.put("Pricing_method",pricing);
                                 userData.put("Password", password);
                                 userData.put("username_password", y);
 
