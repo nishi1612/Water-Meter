@@ -7,9 +7,12 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,17 +33,24 @@ import java.util.Objects;
 public class admin_signup extends AppCompatActivity {
 
 
+    private EditText admin_signup_society;
+    private EditText admin_signup_area;
+    private EditText admin_signup_city;
+    private EditText admin_signup_pincode;
+    private EditText admin_signup_password;
+    private EditText admin_signup_password_2;
     private Button admin_signup_submit;
+
+//    private RadioGroup pricing_method;
+    private RadioButton radioButton;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
 
-    private EditText admin_signup_password;
-    private EditText admin_signup_society;
-    private EditText admin_signup_password_2;
-    private ArrayAdapter<CharSequence> methods;
+
+//    private ArrayAdapter<CharSequence> methods;
 //    private EditText cost;
 //    private EditText discount;
-    private Spinner method;
+//    private Spinner method;
 
     private TextView usernames;
 
@@ -57,15 +67,20 @@ public class admin_signup extends AppCompatActivity {
         admin_signup_password  = (EditText) findViewById(R.id.admin_signup_password);
         admin_signup_society = (EditText)findViewById(R.id.admin_signup_society);
         admin_signup_password_2 = (EditText)findViewById(R.id.admin_signup_password_2);
-//        cost = (EditText)findViewById(R.id.cost);
-//        discount = (EditText)findViewById(R.id.discount);
+
+        admin_signup_area = (EditText) findViewById(R.id.admin_signup_area);
+        admin_signup_city = (EditText) findViewById(R.id.admin_signup_city);
+        admin_signup_pincode = (EditText) findViewById(R.id.admin_signup_pincode);
+
+//        pricing_method = (RadioGroup) findViewById(R.id.pricing_method);
+
 
         usernames = (TextView)findViewById(R.id.username);
 
-        method = (Spinner)findViewById(R.id.method);
-        methods = ArrayAdapter.createFromResource(this,R.array.Methods,android.R.layout.simple_spinner_item);
-        methods.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        method.setAdapter(methods);
+//        method = (Spinner)findViewById(R.id.method);
+//        methods = ArrayAdapter.createFromResource(this,R.array.Methods,android.R.layout.simple_spinner_item);
+//        methods.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        method.setAdapter(methods);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
         myDatabase = FirebaseDatabase.getInstance().getReference();
@@ -84,14 +99,9 @@ public class admin_signup extends AppCompatActivity {
                 size[0] = dataSnapshot.getChildrenCount();
                 size[0]++;
                 String t = "";
-                t = "Your Username : " + t + String.valueOf(size[0]);
+                t = "Username : " + t + String.valueOf(size[0]);
                 usernames.setText(t);
-                //Toast.makeText(getApplicationContext(), t, Toast.LENGTH_LONG).show();
                 username[0] = String.valueOf(size[0]);
-                //usernames.setText(username[0]);
-
-
-
             }
 
             @Override
@@ -102,6 +112,7 @@ public class admin_signup extends AppCompatActivity {
 
 
 
+
         admin_signup_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -109,20 +120,45 @@ public class admin_signup extends AppCompatActivity {
 
                 final String password = admin_signup_password.getText().toString().trim();
                 final String society = admin_signup_society.getText().toString().trim();
+                final String city = admin_signup_city.getText().toString().trim();
+                final String area = admin_signup_area.getText().toString().trim();
+                final String pincode = admin_signup_pincode.getText().toString().trim();
+                final String password_2 = admin_signup_password_2.getText().toString().trim();
+//                final String pricing = ((RadioButton) findViewById(pricing_method.getCheckedRadioButtonId())).getText().toString().trim();
+
 //                final String costs = cost.getText().toString().trim();
 //                final String discounts = discount.getText().toString().trim();
 
-                String password_2 = admin_signup_password_2.getText().toString().trim();
+
 
 //                if(TextUtils.isEmpty(username[0])) {
 //                    Toast.makeText(admin_signup.this,"Please enter your username",Toast.LENGTH_SHORT).show();
 //                    return;
 //                }
 
+                if(TextUtils.isEmpty(city)){
+                    Toast.makeText(admin_signup.this,"Please enter the name of your city",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if(TextUtils.isEmpty(area)){
+                    Toast.makeText(admin_signup.this,"Please enter the area of your city",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if(TextUtils.isEmpty(pincode)){
+                    Toast.makeText(admin_signup.this,"Please enter the pincode of your city",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 if(TextUtils.isEmpty(password)){
                     Toast.makeText(admin_signup.this,"Please enter your password",Toast.LENGTH_SHORT).show();
                     return;
                 }
+
+                if (password.isEmpty() || password.length() < 6) {  admin_signup_password.setError("Password cannot be less than 6 characters!"); return;
+                }
+
 
                 if(TextUtils.isEmpty(password_2)){
                     Toast.makeText(admin_signup.this,"Please re enter your password",Toast.LENGTH_SHORT).show();
@@ -144,7 +180,11 @@ public class admin_signup extends AppCompatActivity {
 //                    return;
 //                }
 
-                final String method1 = method.getSelectedItem().toString();
+//                AdapterView method = null;
+//                final String method1 = method.getSelectedItem().toString();
+
+//                int selectMethod = pricing_method.getCheckedRadioButtonId();
+//                radioButton = (RadioButton) findViewById(selectMethod);
 
 //                if(method1.equals("Method 2")){
 //                    if(TextUtils.isEmpty(discounts)){
@@ -180,15 +220,20 @@ public class admin_signup extends AppCompatActivity {
                             userData.put("Password", password);
                             userData.put("Society", society);
                             userData.put("username_password", y);
-                            if(method1.equals("Method 1")){
-                                userData.put("Method",String.valueOf(1));
-                                userData.put("Cost","0");
-                                userData.put("Discount","0");
-                            }else {
-                                userData.put("Method", String.valueOf(2));
-                                userData.put("Cost","0");
-                                userData.put("Discount","0");
-                            }
+                            userData.put("city",city);
+                            userData.put("area",area);
+                            userData.put("pincode",pincode);
+//                            userData.put("Pricing_method",pricing);
+//                            userData.put("Pricing Method",);
+//                            if(method1.equals("Method 1")){
+//                                userData.put("Method",String.valueOf(1));
+//                                userData.put("Cost","0");
+//                                userData.put("Discount","0");
+//                            }else {
+//                                userData.put("Method", String.valueOf(2));
+//                                userData.put("Cost","0");
+//                                userData.put("Discount","0");
+//                            }
 
                             Log.d("hello", "how");
 
@@ -203,7 +248,11 @@ public class admin_signup extends AppCompatActivity {
                             i.putExtra("username_password",y);
                             i.putExtra("cost","0");
                             i.putExtra("discount","0");
-                            i.putExtra("method",method1);
+                            i.putExtra("area",area);
+                            i.putExtra("city",city);
+                            i.putExtra("pincode",pincode);
+//                            i.putExtra("pricing_method",pricing);
+//                            i.putExtra("method",method1);
                             startActivity(i);
                             finish();
 
@@ -211,7 +260,6 @@ public class admin_signup extends AppCompatActivity {
 //                            startActivity(new Intent(getApplicationContext(), admin_login.class));
 //                            finish();
 //
-//                            Log.d("hello1", "how1");
 
 
                         }
@@ -222,17 +270,9 @@ public class admin_signup extends AppCompatActivity {
 
                     }
                 });
-
-
-
-
-
             }
         });
     }
-
-
-
 }
 
 

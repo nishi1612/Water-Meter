@@ -59,9 +59,9 @@ public class admin_login extends AppCompatActivity {
         });
     }
 
-    public void choosen_admin_signup(View view){
-        startActivity(new Intent(getApplicationContext(), admin_signup.class));
-    }
+//    public void choosen_admin_signup(View view){
+//        startActivity(new Intent(getApplicationContext(), admin_signup.class));
+//    }
 
     public void fetchData(String username,String password ){
 
@@ -90,13 +90,20 @@ public class admin_login extends AppCompatActivity {
                         HashMap<String, Object> map = (HashMap<String, Object>) mObject;
 
                         Intent i = new Intent(getApplicationContext(), admin_logged_in.class);
-                        i.putExtra("username", map.get("Username").toString());
-                        i.putExtra("password", map.get("Password").toString());
-                        i.putExtra("society",map.get("Society").toString());
+                        i.putExtra("Area",map.get("Area").toString());
+                        i.putExtra("Cost",map.get("Cost").toString());
+                        i.putExtra("Discount",map.get("Discount").toString());
+                        i.putExtra("Method",map.get("Method").toString());
+                        i.putExtra("Password",map.get("Password").toString());
+                        i.putExtra("Pincode",map.get("Pincode").toString());
+                        i.putExtra("Society",map.get("Society").toString());
+                        i.putExtra("Username",map.get("Username").toString());
+                        i.putExtra("City",map.get("City").toString());
                         i.putExtra("username_password",map.get("username_password").toString());
-                        i.putExtra("cost",map.get("Cost").toString());
-                        i.putExtra("discount",map.get("Discount").toString());
-                        i.putExtra("method",map.get("Method").toString());
+
+//                        i.putExtra("cost",map.get("Cost").toString());
+//                        i.putExtra("discount",map.get("Discount").toString());
+//                        i.putExtra("method",map.get("Method").toString());
 
                         startActivity(i);
                         finish();
