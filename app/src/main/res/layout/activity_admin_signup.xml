@@ -6,75 +6,214 @@
     android:layout_height="match_parent"
     tools:context="com.example.application.watermeter.admin_signup">
 
-    <EditText
-        android:id="@+id/admin_signup_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/admin_signup_password_2"
-        android:layout_alignStart="@+id/admin_signup_password_2"
-        android:layout_alignTop="@+id/admin_signup_society"
-        android:layout_marginTop="70dp"
-        android:ems="10"
-        android:hint="Enter your password"
-        android:inputType="textPassword" />
+    <!--<EditText-->
+        <!--android:id="@+id/admin_signup_password"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignLeft="@+id/admin_signup_password_2"-->
+        <!--android:layout_alignStart="@+id/admin_signup_password_2"-->
+        <!--android:layout_alignTop="@+id/admin_signup_society"-->
+        <!--android:layout_marginTop="70dp"-->
+        <!--android:ems="10"-->
+        <!--android:hint="Enter your password"-->
+        <!--android:inputType="textPassword" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/admin_signup_submit"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginBottom="47dp"-->
+        <!--android:text="SIGNUP" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/admin_signup_society"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignLeft="@+id/admin_signup_password"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_marginTop="60dp"-->
+        <!--android:ems="10"-->
+        <!--android:hint="Enter the society"-->
+        <!--android:inputType="textPersonName" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/admin_signup_password_2"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/admin_signup_password"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="61dp"-->
+        <!--android:ems="10"-->
+        <!--android:hint="Re-enter your password"-->
+        <!--android:inputType="textPassword" />-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/username"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_above="@+id/admin_signup_password"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginBottom="15dp"-->
+        <!--android:text="Your Username :   "-->
+        <!--android:textSize="20sp" />-->
+
+    <!--<Spinner-->
+        <!--android:id="@+id/method"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_below="@+id/textView" />-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/textView"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignLeft="@+id/admin_signup_password_2"-->
+        <!--android:layout_alignStart="@+id/admin_signup_password_2"-->
+        <!--android:layout_below="@+id/admin_signup_password_2"-->
+        <!--android:layout_marginTop="84dp"-->
+        <!--android:text="Enter your method for water meter" />-->
+
 
     <Button
         android:id="@+id/admin_signup_submit"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="47dp"
-        android:text="SIGNUP" />
+        android:background="@drawable/button_round"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="500dp"
+        android:text="Next" />
 
     <EditText
         android:id="@+id/admin_signup_society"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/admin_signup_password"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="60dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/up"
         android:ems="10"
-        android:hint="Enter the society"
+        android:hint="Enter your Society Name"
+        android:textColorHint="@android:color/white"
+        android:padding="5dp"
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/admin_signup_password_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/admin_signup_password"
+        android:id="@+id/admin_signup_area"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="100dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="61dp"
+        android:background="#569adf"
         android:ems="10"
-        android:hint="Re-enter your password"
-        android:inputType="textPassword" />
+        android:hint="Enter your Area"
+        android:textColorHint="@android:color/white"
+        android:padding="5dp"
+        android:inputType="textPersonName" />
 
+    <EditText
+        android:id="@+id/admin_signup_city"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="150dp"
+        android:layout_centerHorizontal="true"
+        android:background="#569adf"
+        android:ems="10"
+        android:hint="Enter your City"
+        android:textColorHint="@android:color/white"
+        android:padding="5dp"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/admin_signup_pincode"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="200dp"
+        android:layout_centerHorizontal="true"
+        android:background="#569adf"
+        android:ems="10"
+        android:hint="Enter your Pincode"
+        android:textColorHint="@android:color/white"
+        android:padding="5dp"
+        android:inputType="number" />
+
+    <!--android:id="@+id/admin_signup_username"-->
     <TextView
         android:id="@+id/username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/admin_signup_password"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="15dp"
-        android:text="Your Username :   "
-        android:textSize="20sp" />
+        android:layout_marginTop="250dp"
+        android:background="#569adf"
+        android:ems="10"
+        android:hint="Username"
+        android:textSize="15dp"
+        android:textColorHint="@android:color/white"
+        android:padding="5dp"/>
 
-    <Spinner
-        android:id="@+id/method"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/admin_signup_password_2"
-        android:layout_alignStart="@+id/admin_signup_password_2"
-        android:layout_below="@+id/admin_signup_password_2"
-        android:layout_marginTop="84dp"
-        android:text="Enter your method for water meter" />
+    <EditText
+        android:id="@+id/admin_signup_password"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="300dp"
+        android:background="#569adf"
+        android:ems="10"
+        android:hint="Enter your Password"
+        android:layout_centerHorizontal="true"
+        android:textColorHint="@android:color/white"
+        android:padding="5dp"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/admin_signup_password_2"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/down"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="350dp"
+        android:ems="10"
+        android:hint="Re-enter your password"
+        android:textColorHint="@android:color/white"
+        android:padding="5dp"
+        android:inputType="textPassword" />
+
+    <!--<TextView-->
+        <!--android:layout_width="300dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="#abcdef"-->
+        <!--android:layout_marginTop="400dp"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:textColor="@android:color/black"-->
+        <!--android:textSize="20dp"-->
+        <!--android:padding="5dp"-->
+        <!--android:text="Pricing Method"-->
+        <!--/>-->
+
+    <!--<RadioGroup-->
+        <!--android:id="@+id/pricing_method"-->
+        <!--android:layout_width="300dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@drawable/down"-->
+        <!--android:layout_marginTop="430dp"-->
+        <!--android:padding="5dp"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--&gt;-->
+
+        <!--<RadioButton-->
+            <!--android:id="@+id/fixed"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Fixed Costing"/>-->
+
+        <!--<RadioButton-->
+            <!--android:id="@+id/variable"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Fixed + Variable Costing"/>-->
+    <!--</RadioGroup>-->
 
 </RelativeLayout>

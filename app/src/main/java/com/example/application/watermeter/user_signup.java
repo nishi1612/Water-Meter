@@ -27,21 +27,22 @@ public class user_signup extends AppCompatActivity {
 
     private EditText user_flat;
     private EditText user_initial_reading;
-    //private EditText user_cost;
     private EditText user_signup_mobile_number;
     private Button user_signed_up;
+    private TextView user_date;
+
 //    private Spinner user_signup_date;
 //    private Spinner user_signup_month;
 //    private Spinner user_signup_year;
 //    private ArrayAdapter<CharSequence> dates;
 //    private ArrayAdapter<CharSequence> months;
 //    private ArrayAdapter<CharSequence> years;
-    private TextView txtView;
 
     private DatabaseReference mDatabase;
 
     @Override
     public void onBackPressed() {
+        //super.onBackPressed();
         finish();
     }
 
@@ -53,17 +54,17 @@ public class user_signup extends AppCompatActivity {
         Calendar c = Calendar.getInstance();
         System.out.println("Current time => "+c.getTime());
 
-        txtView = (TextView) findViewById(R.id.date);
+        user_date = (TextView) findViewById(R.id.user_date);
+
 
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         final String formattedDate = df.format(c.getTime());
 
-        txtView.setText(formattedDate);
+        user_date.setText(formattedDate);
 
         user_flat = (EditText)findViewById(R.id.user_flat);
         user_initial_reading = (EditText)findViewById(R.id.user_initial_reading);
         user_signed_up = (Button)findViewById(R.id.user_signed_up);
-        //user_cost = (EditText)findViewById(R.id.user_cost);
         user_signup_mobile_number = (EditText)findViewById(R.id.user_signup_mobile_number);
 
 //        user_signup_date = (Spinner)findViewById(R.id.user_signup_date);
@@ -203,13 +204,25 @@ public class user_signup extends AppCompatActivity {
 
                 Intent intent = getIntent();
 
-                final String username1 = intent.getStringExtra("username");
-                final String password1 = intent.getStringExtra("password");
-                final String society1 = intent.getStringExtra("society");
-                final String cost = intent.getStringExtra("cost");
+                final String Area = intent.getStringExtra("Area");
+                final String Cost = intent.getStringExtra("Cost");
+                final String Discount = intent.getStringExtra("Discount");
+                final String Method = intent.getStringExtra("Method");
+                final String Password = intent.getStringExtra("Password");
+                final String Pincode = intent.getStringExtra("Pincode");
+                final String Society = intent.getStringExtra("Society");
+                final String Username = intent.getStringExtra("Username");
+                final String City = intent.getStringExtra("City");
+                final String username_password = intent.getStringExtra("username_password");
+
+//                final String username1 = intent.getStringExtra("username");
+//                final String password1 = intent.getStringExtra("password");
+//                final String society1 = intent.getStringExtra("society");
+//                final String cost = intent.getStringExtra("cost");
+//                final String discount = intent.getStringExtra("discount");
 
                 Query query = mDatabase
-                        .child("Admin").child(username1)
+                        .child("Admin").child(username)
                         .orderByChild("username")
                         .equalTo(username);
 
@@ -286,7 +299,6 @@ public class user_signup extends AppCompatActivity {
 
                 final String initial_date = date + month + user_signup_year.getSelectedItem().toString();
 
-
                 Calendar calendar = Calendar.getInstance();
 
                 int thisYear = calendar.get(Calendar.YEAR);
@@ -326,8 +338,11 @@ public class user_signup extends AppCompatActivity {
                         }else{
 
                             if(TextUtils.isEmpty(password)) {
-                                Toast.makeText(user_signup.this,"Please enter your password",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(user_signup.this,"Please enter your phone number",Toast.LENGTH_SHORT).show();
                                 return;
+                            }
+
+                            if (password.isEmpty() || password.length() < 6) {  user_signup_mobile_number.setError("Phone numbers should be of length 10!"); return;
                             }
 
                             if(TextUtils.isEmpty(flat)){
@@ -456,10 +471,17 @@ public class user_signup extends AppCompatActivity {
                             final String y = username + "_" + password;
 
                             userData.put("Username", username);
-                            userData.put("Flat", flat);
                             userData.put("Password",password);
                             userData.put("Mobile Number",password);
                             userData.put("username_password",y);
+                            userData.put("Flat", flat);
+                            userData.put("Society",Society);
+                            userData.put("Area",Area);
+                            userData.put("City",City);
+                            userData.put("Pincode",Pincode);
+                            userData.put("Method",Method);
+                            userData.put("Cost",Cost);
+                            userData.put("Discount",Discount);
                             userData.put("Reading0", initial_reading);
                             userData.put("Reading1", "0");
                             userData.put("Reading2", "0");
@@ -486,24 +508,38 @@ public class user_signup extends AppCompatActivity {
                             userData.put("Date10","0");
                             userData.put("Date11","0");
                             userData.put("Date12","0");
-
-                            //Log.d("hello","how");
-                            Intent i = new Intent(getApplicationContext(), admin_logged_in.class);
-                            i.putExtra("username", username1);
-                            i.putExtra("password", password1);
-                            i.putExtra("society",society1);
-
-                            userData.put("Society",society1);
-                            userData.put("Cost",cost);
+                            userData.put("Amount0","0");
+                            userData.put("Amount1","0");
+                            userData.put("Amount2","0");
+                            userData.put("Amount3","0");
+                            userData.put("Amount4","0");
+                            userData.put("Amount5","0");
+                            userData.put("Amount6","0");
+                            userData.put("Amount7","0");
+                            userData.put("Amount8","0");
+                            userData.put("Amount9","0");
+                            userData.put("Amount10","0");
+                            userData.put("Amount11","0");
+                            userData.put("Amount12","0");
                             userData.put("Final Amount","0");
 
+                            mDatabase.child("Admin").child(Username).push().setValue(userData);
 
+                            //              mDatabase.child("Hello").setValue(userData);
 
+                            //Log.d("hello","how");
 
-                            mDatabase.child("Admin").child(username1.toString()).push().setValue(userData);
-
-            //              mDatabase.child("Hello").setValue(userData);
-
+                            Intent i = new Intent(getApplicationContext(), admin_logged_in.class);
+                            i.putExtra("Area",Area);
+                            i.putExtra("Cost",Cost);
+                            i.putExtra("Discount",Discount);
+                            i.putExtra("Method",Method);
+                            i.putExtra("Password",Password);
+                            i.putExtra("Pincode",Pincode);
+                            i.putExtra("Society",Society);
+                            i.putExtra("Username",Username);
+                            i.putExtra("City",City);
+                            i.putExtra("username_password",username_password);
 
                             startActivity(i);
                             finish();
@@ -515,8 +551,6 @@ public class user_signup extends AppCompatActivity {
 
                     }
                 });
-
-
 
                 //Log.d("hello1","how1");
 
