@@ -198,7 +198,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="450dp">
+        android:layout_marginTop="450dp"
+        android:background="@drawable/round"
+        android:padding="5dp">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -234,12 +236,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:padding="5dp">
+        android:padding="5dp"
+        android:layout_marginTop="200dp">
+
     <NumberPicker
         android:id="@+id/meter1"
         android:layout_width="45dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
         android:background="#E0E0E0">
     </NumberPicker>
 
@@ -247,7 +250,6 @@
         android:id="@+id/meter2"
         android:layout_width="45dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
         android:layout_toRightOf="@+id/meter1"
         android:background="#E0E0E0">
     </NumberPicker>
@@ -256,7 +258,6 @@
         android:id="@+id/meter3"
         android:layout_width="45dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
         android:layout_toRightOf="@+id/meter2"
         android:background="#E0E0E0">
     </NumberPicker>
@@ -265,7 +266,6 @@
         android:id="@+id/meter4"
         android:layout_width="45dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
         android:layout_toRightOf="@+id/meter3"
         android:background="#E0E0E0">
     </NumberPicker>
@@ -274,7 +274,6 @@
         android:id="@+id/meter5"
         android:layout_width="45dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
         android:layout_toRightOf="@+id/meter4"
         android:background="#E0E0E0">
     </NumberPicker>
@@ -283,7 +282,6 @@
         android:id="@+id/meter6"
         android:layout_width="45dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
         android:layout_toRightOf="@+id/meter5"
         android:background="#E0E0E0">
     </NumberPicker>
@@ -292,7 +290,6 @@
             android:id="@+id/meter7"
             android:layout_width="45dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
             android:layout_toRightOf="@+id/meter6"
             android:background="#FF8A65">
         </NumberPicker>
@@ -301,7 +298,6 @@
             android:id="@+id/meter8"
             android:layout_width="45dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
             android:layout_toRightOf="@+id/meter7"
             android:background="#FF8A65">
         </NumberPicker>
@@ -310,7 +306,6 @@
             android:id="@+id/meter9"
             android:layout_width="45dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
             android:layout_toRightOf="@+id/meter8"
             android:background="#FF8A65">
         </NumberPicker>

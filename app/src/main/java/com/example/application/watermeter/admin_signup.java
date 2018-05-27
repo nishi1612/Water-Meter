@@ -41,7 +41,7 @@ public class admin_signup extends AppCompatActivity {
     private EditText admin_signup_password_2;
     private Button admin_signup_submit;
 
-//    private RadioGroup pricing_method;
+    //    private RadioGroup pricing_method;
     private RadioButton radioButton;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
@@ -112,6 +112,7 @@ public class admin_signup extends AppCompatActivity {
 
 
 
+
         admin_signup_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -141,12 +142,12 @@ public class admin_signup extends AppCompatActivity {
                 }
 
                 if(TextUtils.isEmpty(area)){
-                    Toast.makeText(admin_signup.this,"Please enter the name of your city",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(admin_signup.this,"Please enter the area of your city",Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if(TextUtils.isEmpty(pincode)){
-                    Toast.makeText(admin_signup.this,"Please enter the name of your city",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(admin_signup.this,"Please enter the pincode of your city",Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -154,6 +155,10 @@ public class admin_signup extends AppCompatActivity {
                     Toast.makeText(admin_signup.this,"Please enter your password",Toast.LENGTH_SHORT).show();
                     return;
                 }
+
+                if (password.isEmpty() || password.length() < 6) {  admin_signup_password.setError("Password cannot be less than 6 characters!"); return;
+                }
+
 
                 if(TextUtils.isEmpty(password_2)){
                     Toast.makeText(admin_signup.this,"Please re enter your password",Toast.LENGTH_SHORT).show();
@@ -269,6 +274,3 @@ public class admin_signup extends AppCompatActivity {
         });
     }
 }
-
-
-

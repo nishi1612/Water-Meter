@@ -83,41 +83,34 @@ public class user_signup extends AppCompatActivity {
 //        user_signup_year.setAdapter(years);
 
         /*final String[] date = {""};
-
         user_signup_date.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 //Toast.makeText(getApplicationContext(),adapterView.getItemIdAtPosition(i+1) + " is selected",Toast.LENGTH_LONG).show();
                 date[0] = date[0] + adapterView.getItemAtPosition(i);
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
                 date[0] = "1";
-
             }
         });
-
         user_signup_month.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 //Toast.makeText(getApplicationContext(),adapterView.getItemIdAtPosition(i+1) + " is selected",Toast.LENGTH_LONG).show();
                 date[1] = date[1] + adapterView.getItemAtPosition(i);
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
                 date[1] = "January";
             }
         });
-
         user_signup_year.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 //Toast.makeText(getApplicationContext(),adapterView.getItemIdAtPosition(i+1) + " is selected",Toast.LENGTH_LONG).show();
                 date[2] = date[2] + adapterView.getItemAtPosition(i);
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
                 date[2] = "2017";
@@ -145,80 +138,77 @@ public class user_signup extends AppCompatActivity {
                     Toast.makeText(user_signup.this,"Please enter your password",Toast.LENGTH_SHORT).show();
                     return;
                 }
-
                 if(TextUtils.isEmpty(flat)){
                     Toast.makeText(user_signup.this,"Please enter your flat",Toast.LENGTH_SHORT).show();
                     return;
                 }
-
                 if(TextUtils.isEmpty(initial_reading)){
                     Toast.makeText(user_signup.this,"Please enter your initial water meter reading",Toast.LENGTH_SHORT).show();
                     return;
                 }
-
                 if(TextUtils.isEmpty(cost)){
                     Toast.makeText(user_signup.this,"Please enter cost for one month",Toast.LENGTH_SHORT).show();
                     return;
                 }*/
 
                 /*final String[] date = {""};
-
                 user_signup_date.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                         //Toast.makeText(getApplicationContext(),adapterView.getItemIdAtPosition(i+1) + " is selected",Toast.LENGTH_LONG).show();
                         date[0] = date[0] + adapterView.getItemAtPosition(i);
                     }
-
                     @Override
                     public void onNothingSelected(AdapterView<?> adapterView) {
-
                     }
                 });
-
                 user_signup_month.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                         //Toast.makeText(getApplicationContext(),adapterView.getItemIdAtPosition(i+1) + " is selected",Toast.LENGTH_LONG).show();
                         date[1] = date[1] + adapterView.getItemAtPosition(i);
                     }
-
                     @Override
                     public void onNothingSelected(AdapterView<?> adapterView) {
-
                     }
                 });
-
                 user_signup_year.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                         //Toast.makeText(getApplicationContext(),adapterView.getItemIdAtPosition(i+1) + " is selected",Toast.LENGTH_LONG).show();
                         date[2] = date[2] + adapterView.getItemAtPosition(i);
                     }
-
                     @Override
                     public void onNothingSelected(AdapterView<?> adapterView) {
-
                     }
                 });*/
 
                 Intent intent = getIntent();
 
-                final String username1 = intent.getStringExtra("username");
-                final String password1 = intent.getStringExtra("password");
-                final String society1 = intent.getStringExtra("society");
-                final String cost = intent.getStringExtra("cost");
+                final String Area = intent.getStringExtra("Area");
+                final String Cost = intent.getStringExtra("Cost");
+                final String Discount = intent.getStringExtra("Discount");
+                final String Method = intent.getStringExtra("Method");
+                final String Password = intent.getStringExtra("Password");
+                final String Pincode = intent.getStringExtra("Pincode");
+                final String Society = intent.getStringExtra("Society");
+                final String Username = intent.getStringExtra("Username");
+                final String City = intent.getStringExtra("City");
+                final String username_password = intent.getStringExtra("username_password");
+
+//                final String username1 = intent.getStringExtra("username");
+//                final String password1 = intent.getStringExtra("password");
+//                final String society1 = intent.getStringExtra("society");
+//                final String cost = intent.getStringExtra("cost");
+//                final String discount = intent.getStringExtra("discount");
 
                 Query query = mDatabase
-                        .child("Admin").child(username1)
+                        .child("Admin").child(username)
                         .orderByChild("username")
                         .equalTo(username);
 
                 /*String month = user_signup_month.getSelectedItem().toString();
-
                 String date = user_signup_date.getSelectedItem().toString();
-
-
                 if(date.equals("1")){
                     date = "01";
                 }else if(date.equals("2")){
@@ -238,7 +228,6 @@ public class user_signup extends AppCompatActivity {
                 }else if(date.equals("9")){
                     date = "09";
                 }
-
                 if(month.equals("January")){
                     month = "01";
                 }else if(month.equals("February")){
@@ -284,22 +273,15 @@ public class user_signup extends AppCompatActivity {
                 }else if(month.equals("December")) {
                     month = "12";
                 }
-
                 final String initial_date = date + month + user_signup_year.getSelectedItem().toString();
-
-
                 Calendar calendar = Calendar.getInstance();
-
                 int thisYear = calendar.get(Calendar.YEAR);
                 int thisMonth = calendar.get(Calendar.MONTH);
                 int thisDate = calendar.get(Calendar.DAY_OF_MONTH);
-
                 int given_date = user_signup_date.getSelectedItemPosition() + 1;
                 int given_month = user_signup_month.getSelectedItemPosition();
                 int given_year = user_signup_year.getSelectedItemPosition() + 2017;
-
                 //Toast.makeText(getApplicationContext(),thisYear + " " + given_year,Toast.LENGTH_LONG).show();
-
                 if(given_year == thisYear){
                     if(given_month > thisMonth){
                         Toast.makeText(getApplicationContext(),"Invalid Date Entered",Toast.LENGTH_LONG).show();
@@ -327,8 +309,11 @@ public class user_signup extends AppCompatActivity {
                         }else{
 
                             if(TextUtils.isEmpty(password)) {
-                                Toast.makeText(user_signup.this,"Please enter your password",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(user_signup.this,"Please enter your phone number",Toast.LENGTH_SHORT).show();
                                 return;
+                            }
+
+                            if (password.isEmpty() || password.length() < 6) {  user_signup_mobile_number.setError("Phone numbers should be of length 10!"); return;
                             }
 
                             if(TextUtils.isEmpty(flat)){
@@ -457,10 +442,17 @@ public class user_signup extends AppCompatActivity {
                             final String y = username + "_" + password;
 
                             userData.put("Username", username);
-                            userData.put("Flat", flat);
                             userData.put("Password",password);
                             userData.put("Mobile Number",password);
                             userData.put("username_password",y);
+                            userData.put("Flat", flat);
+                            userData.put("Society",Society);
+                            userData.put("Area",Area);
+                            userData.put("City",City);
+                            userData.put("Pincode",Pincode);
+                            userData.put("Method",Method);
+                            userData.put("Cost",Cost);
+                            userData.put("Discount",Discount);
                             userData.put("Reading0", initial_reading);
                             userData.put("Reading1", "0");
                             userData.put("Reading2", "0");
@@ -487,24 +479,38 @@ public class user_signup extends AppCompatActivity {
                             userData.put("Date10","0");
                             userData.put("Date11","0");
                             userData.put("Date12","0");
-
-                            //Log.d("hello","how");
-                            Intent i = new Intent(getApplicationContext(), admin_logged_in.class);
-                            i.putExtra("username", username1);
-                            i.putExtra("password", password1);
-                            i.putExtra("society",society1);
-
-                            userData.put("Society",society1);
-                            userData.put("Cost",cost);
+                            userData.put("Amount0","0");
+                            userData.put("Amount1","0");
+                            userData.put("Amount2","0");
+                            userData.put("Amount3","0");
+                            userData.put("Amount4","0");
+                            userData.put("Amount5","0");
+                            userData.put("Amount6","0");
+                            userData.put("Amount7","0");
+                            userData.put("Amount8","0");
+                            userData.put("Amount9","0");
+                            userData.put("Amount10","0");
+                            userData.put("Amount11","0");
+                            userData.put("Amount12","0");
                             userData.put("Final Amount","0");
 
+                            mDatabase.child("Admin").child(Username).push().setValue(userData);
 
+                            //              mDatabase.child("Hello").setValue(userData);
 
+                            //Log.d("hello","how");
 
-                            mDatabase.child("Admin").child(username1.toString()).push().setValue(userData);
-
-            //              mDatabase.child("Hello").setValue(userData);
-
+                            Intent i = new Intent(getApplicationContext(), admin_logged_in.class);
+                            i.putExtra("Area",Area);
+                            i.putExtra("Cost",Cost);
+                            i.putExtra("Discount",Discount);
+                            i.putExtra("Method",Method);
+                            i.putExtra("Password",Password);
+                            i.putExtra("Pincode",Pincode);
+                            i.putExtra("Society",Society);
+                            i.putExtra("Username",Username);
+                            i.putExtra("City",City);
+                            i.putExtra("username_password",username_password);
 
                             startActivity(i);
                             finish();
@@ -516,8 +522,6 @@ public class user_signup extends AppCompatActivity {
 
                     }
                 });
-
-
 
                 //Log.d("hello1","how1");
 

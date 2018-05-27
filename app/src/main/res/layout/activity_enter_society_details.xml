@@ -44,4 +44,28 @@
         android:background="@drawable/button_round"
         android:textColor="@android:color/white"
         android:inputType="number"/>
+
+    <RadioGroup
+        android:id="@+id/pricing_method"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:padding="5dp"
+        android:layout_centerHorizontal="true">
+
+        <RadioButton
+            android:id="@+id/fixed"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:text="Fixed Costing"
+            android:background="@drawable/up"/>
+
+        <RadioButton
+            android:id="@+id/variable"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:text="Fixed + Variable Costing"
+            android:background="@drawable/down"/>
+    </RadioGroup>
+
 </RelativeLayout>
