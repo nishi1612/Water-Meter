@@ -605,8 +605,8 @@ public final class R {
         public static final int actions = 0x7f09001a;
         public static final int activity_chooser_view_content = 0x7f09001b;
         public static final int add = 0x7f09001c;
-        public static final int alertTitle = 0x7f09002d;
-        public static final int async = 0x7f090030;
+        public static final int alertTitle = 0x7f09002c;
+        public static final int async = 0x7f09002f;
         public static final int blocking = 0x7f090034;
         public static final int buttonPanel = 0x7f090036;
         public static final int cancel_action = 0x7f090037;
@@ -682,7 +682,7 @@ public final class R {
         public static final int topPanel = 0x7f0900cf;
         public static final int uniform = 0x7f0900d6;
         public static final int up = 0x7f0900d7;
-        public static final int wrap_content = 0x7f0900ed;
+        public static final int wrap_content = 0x7f0900eb;
     }
     public static final class integer {
         public static final int abc_config_activityDefaultDur = 0x7f0a0000;

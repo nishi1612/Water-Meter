@@ -6,116 +6,16 @@
     android:layout_height="match_parent"
     tools:context="com.example.application.watermeter.add_user_data">
 
-    <!--<EditText-->
-        <!--android:id="@+id/add_user_data_username"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignLeft="@+id/add_user_data_reading"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--android:layout_alignStart="@+id/add_user_data_reading"-->
-        <!--android:layout_marginTop="84dp"-->
-        <!--android:ems="10"-->
-        <!--android:hint="Enter username"-->
-        <!--android:inputType="textPersonName" />-->
-
-    <!--<EditText-->
-        <!--android:id="@+id/add_user_data_reading"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@+id/add_user_data_username"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_marginTop="52dp"-->
-        <!--android:ems="10"-->
-        <!--android:hint="Enter water meter reading"-->
-        <!--android:inputType="textPersonName" />-->
-
-    <!--<Button-->
-        <!--android:id="@+id/add_data"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_marginBottom="69dp"-->
-        <!--android:text="Add" />-->
-
-    <!--<Spinner-->
-        <!--android:id="@+id/add_user_data_date"-->
-        <!--android:layout_width="100dp"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignEnd="@+id/add_user_data_reading"-->
-        <!--android:layout_alignRight="@+id/add_user_data_reading"-->
-        <!--android:layout_below="@+id/add_user_data_reading"-->
-        <!--android:layout_marginTop="36dp" />-->
-
-    <!--<Spinner-->
-        <!--android:id="@+id/add_user_data_month"-->
-        <!--android:layout_width="100dp"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignLeft="@+id/add_user_data_date"-->
-        <!--android:layout_alignStart="@+id/add_user_data_date"-->
-        <!--android:layout_below="@+id/add_user_data_date" />-->
-
-    <!--<Spinner-->
-        <!--android:id="@+id/add_user_data_year"-->
-        <!--android:layout_width="100dp"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignLeft="@+id/add_user_data_month"-->
-        <!--android:layout_alignStart="@+id/add_user_data_month"-->
-        <!--android:layout_below="@+id/add_user_data_month" />-->
-
-    <!--<TextView-->
-        <!--android:id="@+id/textView4"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_above="@+id/add_user_data_month"-->
-        <!--android:layout_alignLeft="@+id/add_user_data_reading"-->
-        <!--android:layout_alignStart="@+id/add_user_data_reading"-->
-        <!--android:text="Select date" />-->
-
-    <!--<TextView-->
-        <!--android:id="@+id/textView5"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_above="@+id/add_user_data_year"-->
-        <!--android:layout_alignLeft="@+id/textView4"-->
-        <!--android:layout_alignStart="@+id/textView4"-->
-        <!--android:text="Select month" />-->
-
-    <!--<TextView-->
-        <!--android:id="@+id/textView6"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignBottom="@+id/add_user_data_year"-->
-        <!--android:layout_alignLeft="@+id/textView5"-->
-        <!--android:layout_alignStart="@+id/textView5"-->
-        <!--android:text="Select year" />-->
-
-
-
     <EditText
         android:id="@+id/add_user_data_username"
         android:layout_marginTop="50dp"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_alignLeft="@+id/add_user_data_reading"
-        android:background="@drawable/up"
-        android:ems="10"
-        android:hint="Enter username"
-        android:textColorHint="@android:color/white"
-        android:padding="5dp"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/add_user_data_reading"
-        android:layout_marginTop="2dp"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/add_user_data_username"
         android:layout_centerHorizontal="true"
+        android:background="@drawable/layout_round"
         android:ems="10"
-        android:hint="Enter water meter reading"
+        android:hint="Enter your Flat number"
         android:textColorHint="@android:color/white"
-        android:background="@drawable/down"
         android:padding="5dp"
         android:inputType="textPersonName" />
 
@@ -131,75 +31,13 @@
         android:padding="5dp"
         android:text="Add" />
 
-    <!--<Spinner-->
-        <!--android:id="@+id/add_user_data_date"-->
-        <!--android:layout_width="150dp"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignEnd="@+id/add_user_data_reading"-->
-        <!--android:layout_alignRight="@+id/add_user_data_reading"-->
-        <!--android:layout_below="@+id/add_user_data_reading"-->
-        <!--android:layout_marginTop="36dp" />-->
-
-    <!--<Spinner-->
-        <!--android:id="@+id/add_user_data_month"-->
-        <!--android:layout_width="150dp"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignEnd="@+id/add_user_data_username"-->
-        <!--android:layout_below="@+id/add_user_data_date"-->
-        <!--android:layout_alignRight="@+id/add_user_data_username" />-->
-
-    <!--<Spinner-->
-        <!--android:id="@+id/add_user_data_year"-->
-        <!--android:layout_width="150dp"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignLeft="@+id/add_user_data_month"-->
-        <!--android:layout_alignStart="@+id/add_user_data_month"-->
-        <!--android:layout_below="@+id/add_user_data_month" />-->
-
-    <!--<TextView-->
-        <!--android:id="@+id/textView4"-->
-        <!--android:layout_width="100dp"-->
-        <!--android:layout_height="25dp"-->
-        <!--android:layout_above="@+id/add_user_data_month"-->
-        <!--android:layout_alignLeft="@+id/add_user_data_reading"-->
-        <!--android:layout_alignStart="@+id/add_user_data_reading"-->
-        <!--android:background="@drawable/up"-->
-        <!--android:textColor="@android:color/white"-->
-        <!--android:padding="5dp"-->
-        <!--android:text="Select date"-->
-        <!--android:ems="10"/>-->
-
-    <!--<TextView-->
-        <!--android:id="@+id/textView5"-->
-        <!--android:layout_width="100dp"-->
-        <!--android:layout_height="25dp"-->
-        <!--android:layout_above="@+id/add_user_data_year"-->
-        <!--android:layout_alignLeft="@+id/textView4"-->
-        <!--android:layout_alignStart="@+id/textView4"-->
-        <!--android:background="#abcdef"-->
-        <!--android:textColor="@android:color/white"-->
-        <!--android:padding="5dp"-->
-        <!--android:text="Select month"-->
-        <!--android:ems="10"/>-->
-
-    <!--<TextView-->
-        <!--android:id="@+id/textView6"-->
-        <!--android:layout_width="100dp"-->
-        <!--android:layout_height="25dp"-->
-        <!--android:layout_alignStart="@+id/add_user_data_username"-->
-        <!--android:layout_below="@+id/add_user_data_month"-->
-        <!--android:background="@drawable/down"-->
-        <!--android:ems="10"-->
-        <!--android:paddingLeft="5dp"-->
-        <!--android:text="Select year"-->
-        <!--android:textColor="@android:color/white" />-->
-
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="300dp"
         android:background="@drawable/round"
+        android:layout_below="@+id/add_user_data_username"
         android:padding="5dp">
 
         <ImageView
@@ -232,12 +70,22 @@
 
     </RelativeLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Water meter reading"
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/add_user_data_username"
+        android:layout_marginTop="40dp"/>
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_below="@+id/add_user_data_username"
         android:padding="5dp"
-        android:layout_marginTop="200dp">
+        android:layout_marginTop="70dp">
 
     <NumberPicker
         android:id="@+id/meter1"

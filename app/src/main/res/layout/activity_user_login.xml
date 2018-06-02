@@ -6,49 +6,6 @@
     android:layout_height="match_parent"
     tools:context="com.example.application.watermeter.user_login">
 
-    <!--<EditText-->
-        <!--android:id="@+id/user_login_username"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_marginTop="128dp"-->
-        <!--android:ems="10"-->
-        <!--android:hint="Enter your house number"-->
-        <!--android:inputType="textPersonName" />-->
-
-    <!--<EditText-->
-        <!--android:id="@+id/user_login_password"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignLeft="@+id/user_login_username"-->
-        <!--android:layout_alignStart="@+id/user_login_username"-->
-        <!--android:layout_below="@+id/user_login_username"-->
-        <!--android:layout_marginTop="44dp"-->
-        <!--android:ems="10"-->
-        <!--android:hint="Enter your password"-->
-        <!--android:inputType="textPassword" />-->
-
-    <!--<Button-->
-        <!--android:id="@+id/user_login_submit"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@+id/user_login_password"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_marginTop="111dp"-->
-        <!--android:text="Login" />-->
-
-    <!--<EditText-->
-        <!--android:id="@+id/user_login_admin"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_marginTop="38dp"-->
-        <!--android:ems="10"-->
-        <!--android:hint="Enter society name"-->
-        <!--android:inputType="textPersonName" />-->
-
     <Button
         android:id="@+id/user_login_submit"
         android:layout_width="200dp"
@@ -85,18 +42,28 @@
         android:padding="5dp"
         android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/user_login_password"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_login_username"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="302dp"
-        android:background="@drawable/down"
-        android:ems="10"
-        android:hint="Enter your password"
         android:textColorHint="@android:color/white"
-        android:padding="5dp"
-        android:inputType="textPassword" />
+        android:hint="Enter your password"
+        android:background="@drawable/down"
+        android:layout_marginTop="2dp"
+        app:passwordToggleEnabled="true">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/user_login_password"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="302dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:padding="5dp"
+            android:backgroundTint="@android:color/transparent"/>
+    </android.support.design.widget.TextInputLayout>
 
 </RelativeLayout>
 
