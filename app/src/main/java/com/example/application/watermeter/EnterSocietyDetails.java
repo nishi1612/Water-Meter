@@ -150,7 +150,7 @@ public class EnterSocietyDetails extends AppCompatActivity {
                                     areaSnapshot.getRef().setValue(null);
                                 }
 
-                                Toast.makeText(getApplicationContext(), "Admin added", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), "Admin added. Your Username is "+username, Toast.LENGTH_LONG).show();
 
                                 startActivity(new Intent(getApplicationContext(), admin_login.class));
                                 finish();

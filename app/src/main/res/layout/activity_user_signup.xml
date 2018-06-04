@@ -30,7 +30,7 @@
         android:textColorHint="@android:color/white"
         android:padding="5dp"
         android:hint="Enter your mobile number"
-        android:inputType="textPassword" />
+        android:inputType="number" />
 
     <RelativeLayout
         android:layout_width="wrap_content"

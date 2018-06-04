@@ -2071,6 +2071,9 @@
     </string-array><string-array name="Years">
         <item>2017</item>
         <item>2018</item>
+    </string-array><string-array name="city_names">
+        <item>Ahmedabad</item>
+        <item>Mumbai</item>
     </string-array></file><file path="/Users/roshani/Documents/GitHub/Master/Water-Meter/app/src/main/res/values/styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         
         <item name="colorPrimary">@color/colorPrimary</item>

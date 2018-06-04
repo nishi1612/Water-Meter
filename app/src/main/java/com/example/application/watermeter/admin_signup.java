@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -33,9 +34,10 @@ import java.util.Objects;
 public class admin_signup extends AppCompatActivity {
 
 
+//    String[] languages = { "C","C++","Java","C#","PHP","JavaScript","jQuery","AJAX","JSON" };
     private EditText admin_signup_society;
     private EditText admin_signup_area;
-    private EditText admin_signup_city;
+    private Spinner admin_signup_city;
     private EditText admin_signup_pincode;
     private EditText admin_signup_password;
     private EditText admin_signup_password_2;
@@ -69,7 +71,7 @@ public class admin_signup extends AppCompatActivity {
         admin_signup_password_2 = (EditText)findViewById(R.id.admin_signup_password_2);
 
         admin_signup_area = (EditText) findViewById(R.id.admin_signup_area);
-        admin_signup_city = (EditText) findViewById(R.id.admin_signup_city);
+        admin_signup_city = (Spinner) findViewById(R.id.admin_signup_city);
         admin_signup_pincode = (EditText) findViewById(R.id.admin_signup_pincode);
 
 //        pricing_method = (RadioGroup) findViewById(R.id.pricing_method);
@@ -84,6 +86,20 @@ public class admin_signup extends AppCompatActivity {
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
         myDatabase = FirebaseDatabase.getInstance().getReference();
+
+
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.select_dialog_singlechoice, languages);
+//        //Find TextView control
+//        AutoCompleteTextView acTextView = (AutoCompleteTextView) findViewById(R.id.admin_signup_city);
+//        //Set the number of characters the user must type before the drop down list is shown
+//        acTextView.setThreshold(1);
+//        //Set the adapter
+//        acTextView.setAdapter(adapter);
+
+        ArrayAdapter<CharSequence> arrayAdapter= ArrayAdapter.createFromResource(this,R.array.city_names,android.R.layout.simple_spinner_item);
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        admin_signup_city.setAdapter(arrayAdapter);
+
 
         Query q = myDatabase
                 .child("Admin")
@@ -120,7 +136,7 @@ public class admin_signup extends AppCompatActivity {
 
                 final String password = admin_signup_password.getText().toString().trim();
                 final String society = admin_signup_society.getText().toString().trim();
-                final String city = admin_signup_city.getText().toString().trim();
+                final String city = String.valueOf(admin_signup_city.getSelectedItem());
                 final String area = admin_signup_area.getText().toString().trim();
                 final String pincode = admin_signup_pincode.getText().toString().trim();
                 final String password_2 = admin_signup_password_2.getText().toString().trim();
