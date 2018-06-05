@@ -20,4 +20,6 @@ public class MainActivity extends AppCompatActivity {
     public void choosen_user(View view){
         startActivity(new Intent(this, user_login.class));
     }
+
+    public void choosen_admin_signup (View view){ startActivity(new Intent(this,admin_signup.class));}
 }
