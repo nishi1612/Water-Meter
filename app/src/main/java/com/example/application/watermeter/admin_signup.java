@@ -162,8 +162,8 @@ public class admin_signup extends AppCompatActivity {
                     return;
                 }
 
-                if(TextUtils.isEmpty(pincode)){
-                    Toast.makeText(admin_signup.this,"Please enter the pincode of your city",Toast.LENGTH_SHORT).show();
+                if(pincode.isEmpty() || pincode.length() != 6){
+                    Toast.makeText(admin_signup.this,"The pincode must of 6 digits.",Toast.LENGTH_SHORT).show();
                     return;
                 }
 

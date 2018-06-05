@@ -2,6 +2,7 @@ package com.example.application.watermeter;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -10,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -44,6 +46,7 @@ public class user_signup extends AppCompatActivity {
     private NumberPicker numberPicker8;
     private NumberPicker numberPicker9;
     private TextView selectDate;
+    private ImageView cal;
 
     private Button user_signed_up;
 
@@ -64,6 +67,7 @@ public class user_signup extends AppCompatActivity {
         user_signed_up = (Button)findViewById(R.id.user_signed_up);
         user_signup_mobile_number = (EditText)findViewById(R.id.user_signup_mobile_number);
         selectDate = (TextView) findViewById(R.id.sdate);
+        cal = (ImageView) findViewById(R.id.calendar);
 
         numberPicker1 = (NumberPicker) findViewById(R.id.meter1);
         numberPicker2 = (NumberPicker) findViewById(R.id.meter2);
@@ -151,6 +155,15 @@ public class user_signup extends AppCompatActivity {
             }
         });
 
+        cal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new DatePickerDialog(user_signup.this, date, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
 
         user_signed_up.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -210,7 +223,7 @@ public class user_signup extends AppCompatActivity {
                                 return;
                             }
 
-                            if (password.isEmpty() || password.length() < 9 || password.length() > 10) {  user_signup_mobile_number.setError("Phone numbers should be of length 10!"); return;
+                            if (password.isEmpty() || password.length() != 10   ) {  user_signup_mobile_number.setError("Phone numbers should be of length 10!"); return;
                             }
 
                             if(TextUtils.isEmpty(flat)){

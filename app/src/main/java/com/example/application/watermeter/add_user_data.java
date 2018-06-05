@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -45,6 +46,8 @@ public class add_user_data extends AppCompatActivity {
     private NumberPicker numberPicker8;
     private NumberPicker numberPicker9;
     private TextView selectDate;
+    private ImageView cal;
+
     FirebaseDatabase fbDatabase;
     DatabaseReference fbDatabaseReference;
 
@@ -57,7 +60,7 @@ public class add_user_data extends AppCompatActivity {
 
         add_user_data_username =(EditText)findViewById(R.id.add_user_data_username);
         add_data = (Button)findViewById(R.id.add_data);
-
+        cal = (ImageView) findViewById(R.id.cal);
 
         fbDatabase = FirebaseDatabase.getInstance();
         fbDatabaseReference = fbDatabase.getReference();
@@ -148,6 +151,16 @@ public class add_user_data extends AppCompatActivity {
 
 
         selectDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // TODO Auto-generated method stub
+                new DatePickerDialog(add_user_data.this, date, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
+        cal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // TODO Auto-generated method stub

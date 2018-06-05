@@ -53,19 +53,6 @@
         android:entries="@array/city_names">
     </Spinner>
 
-    <!--<EditText-->
-        <!--android:id="@+id/admin_signup_city"-->
-        <!--android:layout_width="300dp"-->
-        <!--android:layout_height="50dp"-->
-        <!--android:layout_marginTop="150dp"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:background="#569adf"-->
-        <!--android:ems="10"-->
-        <!--android:hint="Enter your City"-->
-        <!--android:textColorHint="@android:color/white"-->
-        <!--android:padding="5dp"-->
-        <!--android:inputType="textPersonName" />-->
-
     <EditText
         android:id="@+id/admin_signup_pincode"
         android:layout_width="300dp"
